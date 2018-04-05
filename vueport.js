@@ -19,8 +19,7 @@ Vue.filter('formatDate', function(value) {
 var app = new Vue({
   el: "#app",
   data: {
-    message: "jquery",
-    searchMessage: "Displaying results for",
+    message: "",
     results: {},
     iteration: 0,
     pages: 0,
@@ -28,9 +27,8 @@ var app = new Vue({
     showHide: "Show",
     answer: []
   },
-
   methods: {
-
+    
     getData: function() {
       var vm = this;
       tag = this.message;
@@ -53,11 +51,6 @@ var app = new Vue({
           vm.answer = response.data.items[0];
         });
       vm.seen = true;
-    },
-
-    answerLink: function(id) {
-      var url = "http://stackoverflow.com/a/" + id;
-      return url;
     },
 
     buttonHandler: function(s, i) {
