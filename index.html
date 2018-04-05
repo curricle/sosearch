@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Overflow Search</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+    <div class="wrapper" id="app">
+      <div class="query">
+
+        <h1>S.O.S.</h1>
+        <h2>Stack Overflow Search</h2>
+
+        <div class="searchbox">
+          <input v-model="message"> <button v-on:click="getData">Submit</button>
+        </div>
+      </div>
+
+      <div class="results">
+          <h2>Displaying results for: {{ message }}</h2>
+          <div class="searchResult" v-for="entry in results.items">
+              <div id="title"><h3><a v-bind:href="entry.link">{{entry.title}}</a></h3></div>
+              <div id="date">Created on {{entry.creation_date | formatDate}}</div>
+
+              <div id="tags">Tags: <span v-for="tag in entry.tags"><a v-on:click="clickedTag(tag)">{{tag}}</a><span v-if="entry.tags.length > 1">, </span></span></div>
+
+              <div id="score">Score: {{entry.score}}</div><div id="views">Views: {{entry.view_count}}</div> <div class="answers" id ="showAnswerButton">Answers: {{entry.answer_count}}<br>
+              <span v-if="entry.accepted_answer_id" v-on:click="buttonHandler(seen, entry.accepted_answer_id)">{{showHide}} Accepted Answer</span></div>
+
+              <!-- v-if below needs to return true; create an answerHandler that takes the seen variable and entry.accepted_answer_id; compare accepted answer id to data.answer.id and return if the ids are the same -->
+              <div v-if="answerHandler(seen, entry.accepted_answer_id)" class="highlighted" id="answer"><span v-html="answer.body"></span></div>
+          </div>
+      </div>
+
+    </div>
+
+    <!-- change to production dist link before sending it out -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="vueport.js"></script>
+  </body>
+</html>
