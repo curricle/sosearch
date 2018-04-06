@@ -15,7 +15,7 @@
         <h2>Stack Overflow Search</h2>
 
         <div class="searchbox">
-          <input v-model="message"> <button v-on:click="getData">Submit</button>
+          <input v-model="message"> <button v-on:click="getDataByIntitle">Submit</button>
         </div>
       </div>
 
@@ -29,14 +29,14 @@
 
               <div id="score">Score: {{entry.score}}</div><div id="views">Views: {{entry.view_count}}</div> <div class="answers" id ="showAnswerButton">Answers: {{entry.answer_count}}<br>
               <span v-if="entry.accepted_answer_id" v-on:click="buttonHandler(seen, entry.accepted_answer_id)">{{showHide}} Accepted Answer</span></div>
-              
+
               <div v-if="answerHandler(seen, entry.accepted_answer_id)" class="highlighted" id="answer"><span v-html="answer.body"></span></div>
           </div>
       </div>
 
     </div>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
     <script src="moment.min.js"></script>

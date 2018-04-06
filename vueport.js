@@ -1,7 +1,8 @@
 var start = "https://api.stackexchange.com/2.2/";
 var order = "?order=desc&sort=activity";
-var search = "search?order=desc&sort=activity&tagged="
-var tag = "";
+var search = "search?order=desc&sort=activity"
+var tag = "&tagged=";
+var intitle = "&intitle=";
 var answer = "answers/";
 var url = "";
 var filter = "&filter=!b1MMEcD.mWz_cH";
@@ -27,11 +28,10 @@ var app = new Vue({
     answer: []
   },
   methods: {
-    
-    getData: function() {
+
+    getDataByIntitle: function() {
       var vm = this;
-      tag = this.message;
-      url = start + search + tag + end;
+      url = start + search + intitle + this.message + end;
       this.$http
         .get(url)
         .then(function(response) {
@@ -40,6 +40,18 @@ var app = new Vue({
             vm.pages = response.data.items.length;
           });
         },
+
+    getDataByTag: function(t) {
+      var vm = this;
+      url = start + search + tag + t + end;
+      this.$http
+        .get(url)
+        .then(function(response) {
+            vm.results = response.data;
+            vm.iteration = response.data.items.length;
+            vm.pages = response.data.items.length;
+          });
+      },
 
     getAnswer: function(id) {
       var vm = this;
@@ -68,7 +80,7 @@ var app = new Vue({
     clickedTag: function(t) {
       var vm = this;
       vm.message = t;
-      vm.getData();
+      vm.getDataByTag(t);
     },
 
     answerHandler(s, i) {
