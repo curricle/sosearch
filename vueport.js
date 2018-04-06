@@ -4,9 +4,8 @@ var search = "search?order=desc&sort=activity&tagged="
 var tag = "";
 var answer = "answers/";
 var url = "";
-var key = "Gbo3baV3tQ2c6huy7kCZjQ((";
 var filter = "&filter=!b1MMEcD.mWz_cH";
-var end = "&site=stackoverflow&key=" + key;
+var end = "&site=stackoverflow";
 
 Vue.prototype.$http = axios;
 
