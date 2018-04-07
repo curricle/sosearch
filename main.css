@@ -11,9 +11,18 @@ body {
     width: 70%;
   }
 }
-h1 {
-  font-size: 4em;
-  margin-bottom: 0px;
+.header {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.header img {
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .header {
+    padding: 5% 0;
+  }
 }
 .query {
   text-align: center;
@@ -37,8 +46,7 @@ input {
   color: #f48024;
 }
 .clickable:hover {
-  color: #bcbbbb;
-  text-decoration: underline;
+  color: #ffb66d;
 }
 .searchResult {
   margin: 10px;

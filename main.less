@@ -2,6 +2,7 @@
 @grey: #bcbbbb;
 @light-grey: #cdcdcd;
 @orange: #f48024;
+@light-orange: #ffb66d;
 
 body {
   font-family: 'Open sans', sans-serif;
@@ -17,9 +18,16 @@ body {
   }
 }
 
-h1 {
-  font-size: 4em;
-  margin-bottom: 0px;
+.header {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+  img {
+    width: 100%;
+  }
+  @media (min-width: 600px) {
+    padding: 5% 0;
+  }
 }
 
 .query {
@@ -47,8 +55,7 @@ input {
 .clickable {
   color: @orange;
   &:hover {
-    color: @grey;
-    text-decoration: underline;
+    color: @light-orange;
   }
 }
 
