@@ -32,6 +32,8 @@
 
               <div v-if="answerHandler(seen, entry.accepted_answer_id)" class="highlighted" id="answer"><span v-html="answer.body"></span></div>
           </div>
+          
+          <div class="searchResult" v-if="error.length !== 0">Error {{error.error_id}}: {{error.error_name}}. {{error.error_message}}</div>
       </div>
 
     </div>
