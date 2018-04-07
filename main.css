@@ -29,9 +29,19 @@ body {
   text-align: center;
 }
 input {
-  border: 1px solid black;
+  border: 1px solid #bcbbbb;
   border-radius: 3px;
-  padding: 3px;
+  padding: 4px;
+}
+button {
+  background-color: #f48024;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+}
+button:hover {
+  background-color: #ffb66d;
 }
 .results div {
   margin: 5px;

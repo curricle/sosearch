@@ -36,9 +36,20 @@ body {
 }
 
 input {
-  border: 1px solid black;
+  border: 1px solid @grey;
   border-radius: 3px;
-  padding: 3px;
+  padding: 4px;
+}
+
+button {
+  background-color: @orange;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  &:hover {
+    background-color: @light-orange;
+  }
 }
 
 .results {
