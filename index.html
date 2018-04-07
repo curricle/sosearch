@@ -26,10 +26,10 @@
               <div id="title"><h3><a v-bind:href="entry.link" target="_blank">{{entry.title}}</a></h3></div>
               <div id="date">Created on {{entry.creation_date | formatDate}}</div>
 
-              <div id="tags">Tags: <span v-for="tag in entry.tags"><a v-on:click="clickedTag(tag)">{{tag}}</a><span v-if="entry.tags.length > 1">, </span></span></div>
+              <div id="tags">Tags: <span v-for="tag in entry.tags"><span v-on:click="clickedTag(tag)" class="clickable">{{tag}}</span><span v-if="entry.tags.length > 1">, </span></span></div>
 
               <div id="score">Score: {{entry.score}}</div><div id="views">Views: {{entry.view_count}}</div> <div class="answers" id ="showAnswerButton">Answers: {{entry.answer_count}}<br>
-              <span v-if="entry.accepted_answer_id" v-on:click="buttonHandler(seen, entry.accepted_answer_id)">{{showHide}} Accepted Answer</span></div>
+              <span v-if="entry.accepted_answer_id" v-on:click="buttonHandler(seen, entry.accepted_answer_id)" class="clickable">{{showHide}} Accepted Answer</span></div>
 
               <div v-if="answerHandler(seen, entry.accepted_answer_id)" class="highlighted" id="answer"><span v-html="answer.body"></span></div>
           </div>

@@ -33,6 +33,13 @@ input {
 .results .highlighted {
   background-color: #f9f1ca;
 }
+.clickable {
+  color: #898989;
+}
+.clickable:hover {
+  color: #cbcbcb;
+  text-decoration: underline;
+}
 .searchResult {
   margin: 10px;
   border: 3px solid #cbcbcb;
@@ -46,7 +53,7 @@ input {
 }
 #date {
   grid-area: d;
-  color: #cdcdcd;
+  color: #898989;
   font-style: italic;
   font-size: .75em;
 }

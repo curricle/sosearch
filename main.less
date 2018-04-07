@@ -1,3 +1,7 @@
+@dark-grey: #898989;
+@medium-grey: #cbcbcb;
+@light-grey: #cdcdcd;
+
 body {
   font-family: 'Open sans', sans-serif;
   margin: 0;
@@ -39,9 +43,17 @@ input {
   }
 }
 
+.clickable {
+  color: @dark-grey;
+  &:hover {
+    color: @medium-grey;
+    text-decoration: underline;
+  }
+}
+
 .searchResult {
   margin: 10px;
-  border: 3px solid #cbcbcb;
+  border: 3px solid @medium-grey;
   padding: 10px;
   display: grid;
   grid-template-areas:
@@ -60,7 +72,7 @@ input {
 
 #date {
   grid-area: d;
-  color: #cdcdcd;
+  color: @dark-grey;
   font-style: italic;
   font-size: .75em;
 }
