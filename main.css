@@ -64,4 +64,6 @@ input {
 }
 #answer {
   grid-area: a;
+  padding: 10px;
+  overflow-x: auto;
 }
