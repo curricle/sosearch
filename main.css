@@ -34,15 +34,15 @@ input {
   background-color: #f9f1ca;
 }
 .clickable {
-  color: #898989;
+  color: #f48024;
 }
 .clickable:hover {
-  color: #cbcbcb;
+  color: #bcbbbb;
   text-decoration: underline;
 }
 .searchResult {
   margin: 10px;
-  border: 3px solid #cbcbcb;
+  border: 3px solid #bcbbbb;
   padding: 10px;
   display: grid;
   grid-template-areas: "t t t" "d d d" "ta ta ta" "s v ab" ". . ab" "a a a";

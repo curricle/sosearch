@@ -23,7 +23,7 @@
       <div class="results">
           <h2>Displaying results for: {{ message }}</h2>
           <div class="searchResult" v-for="entry in results.items">
-              <div id="title"><h3><a v-bind:href="entry.link" target="_blank">{{entry.title}}</a></h3></div>
+              <div id="title"><h3><a v-bind:href="entry.link" target="_blank" class="clickable">{{entry.title}}</a></h3></div>
               <div id="date">Created on {{entry.creation_date | formatDate}}</div>
 
               <div id="tags">Tags: <span v-for="tag in entry.tags"><span v-on:click="clickedTag(tag)" class="clickable">{{tag}}</span><span v-if="entry.tags.length > 1">, </span></span></div>

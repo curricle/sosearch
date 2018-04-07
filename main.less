@@ -1,6 +1,7 @@
 @dark-grey: #898989;
-@medium-grey: #cbcbcb;
+@grey: #bcbbbb;
 @light-grey: #cdcdcd;
+@orange: #f48024;
 
 body {
   font-family: 'Open sans', sans-serif;
@@ -44,16 +45,16 @@ input {
 }
 
 .clickable {
-  color: @dark-grey;
+  color: @orange;
   &:hover {
-    color: @medium-grey;
+    color: @grey;
     text-decoration: underline;
   }
 }
 
 .searchResult {
   margin: 10px;
-  border: 3px solid @medium-grey;
+  border: 3px solid @grey;
   padding: 10px;
   display: grid;
   grid-template-areas:
