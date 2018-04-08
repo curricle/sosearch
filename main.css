@@ -50,8 +50,24 @@ button:hover {
 .results div h3 {
   margin-bottom: 0;
 }
-.results .highlighted {
+.max-content {
+  width: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+}
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+}
+.highlighted {
   background-color: #f9f1ca;
+}
+code {
+  overflow-x: auto;
 }
 .clickable {
   color: #f48024;
@@ -79,6 +95,10 @@ button:hover {
 #tags {
   grid-area: ta;
 }
+#answer {
+  overflow-x: auto;
+  grid-area: a;
+}
 .answers {
   grid-area: ab;
 }
@@ -88,8 +108,8 @@ button:hover {
 #views {
   grid-area: v;
 }
-#answer {
+.ans {
   grid-area: a;
   padding: 10px;
-  overflow-x: auto;
+  background-color: #e2e2e2;
 }

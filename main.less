@@ -3,6 +3,7 @@
 @light-grey: #cdcdcd;
 @orange: #f48024;
 @light-orange: #ffb66d;
+@answer-grey: #e2e2e2;
 
 body {
   font-family: 'Open sans', sans-serif;
@@ -59,11 +60,28 @@ button {
       margin-bottom: 0;
     }
   }
-  .highlighted {
-    background-color: #f9f1ca;
-  }
 }
 
+.max-content {
+  width: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+}
+
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  .max-content;
+}
+
+.highlighted {
+  background-color: #f9f1ca;
+}
+
+code {
+  overflow-x: auto;
+}
 .clickable {
   color: @orange;
   &:hover {
@@ -101,6 +119,11 @@ button {
   grid-area: ta;
 }
 
+#answer {
+  overflow-x: auto;
+  grid-area: a;
+}
+
 .answers {
   grid-area: ab;
 }
@@ -113,8 +136,8 @@ button {
   grid-area: v;
 }
 
-#answer {
+.ans {
   grid-area: a;
   padding: 10px;
-  overflow-x: auto;
+  background-color: @answer-grey;
 }
