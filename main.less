@@ -1,9 +1,10 @@
 @dark-grey: #898989;
 @grey: #bcbbbb;
 @light-grey: #cdcdcd;
+@answer-grey: #e2e2e2;
+@code-grey: #f2f2f2;
 @orange: #f48024;
 @light-orange: #ffb66d;
-@answer-grey: #e2e2e2;
 
 body {
   font-family: 'Open sans', sans-serif;
@@ -62,26 +63,26 @@ button {
   }
 }
 
-.max-content {
-  width: max-content;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-}
-
 ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  .max-content;
 }
 
 .highlighted {
   background-color: #f9f1ca;
 }
 
-code {
+pre {
+  border: 1px solid @light-grey;
+  border-radius: 4px;
+  background-color: @code-grey;
   overflow-x: auto;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 10px;
 }
+
 .clickable {
   color: @orange;
   &:hover {
@@ -140,4 +141,7 @@ code {
   grid-area: a;
   padding: 10px;
   background-color: @answer-grey;
+  img {
+    width: 100%;
+  }
 }
